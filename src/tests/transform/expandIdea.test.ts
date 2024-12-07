@@ -32,44 +32,20 @@ describe('Idea Expansion Endpoint', () => {
 
     });
 
-    it('should accept optional tone parameter', () => {
-      throw new Error('Test not implemented');
-    });
-
-    it('should validate tone values (casual/professional)', () => {
-      throw new Error('Test not implemented');
-    });
+    test.todo('should accept optional tone parameter');
+    test.todo('should validate tone values (casual/professional)');
   });
 
   describe('Output Structure', () => {
-    it('should generate a structured article outline', () => {
-      throw new Error('Test not implemented');
-    });
-
-    it('should include a title in the outline', () => {
-      throw new Error('Test not implemented');
-    });
-
-    it('should generate appropriate section headings', () => {
-      throw new Error('Test not implemented');
-    });
-
-    it('should include key points for each section', () => {
-      throw new Error('Test not implemented');
-    });
+    test.todo('should generate a structured article outline');
+    test.todo('should include a title in the outline');
+    test.todo('should generate appropriate section headings');
+    test.todo('should include key points for each section');
   });
 
   describe('Metadata Generation', () => {
-    it('should generate relevant tags', () => {
-      throw new Error('Test not implemented');
-    });
-
-    it('should calculate estimated reading time', () => {
-      throw new Error('Test not implemented');
-    });
-
-    it('should return metadata in expected format', () => {
-      throw new Error('Test not implemented');
-    });
+    test.todo('should generate relevant tags');
+    test.todo('should calculate estimated reading time');
+    test.todo('should return metadata in expected format');
   });
 });
