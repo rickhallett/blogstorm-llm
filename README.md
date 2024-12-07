@@ -9,11 +9,13 @@ The LLM Service takes various forms of input content and enhances it through dif
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - OpenAI API key
 - PostgreSQL database
 
 ### Installation
+
 1. Clone the repository
 2. Install dependencies: `npm install`
 3. Copy `.env.example` to `.env` and fill in required values
@@ -23,28 +25,33 @@ The LLM Service takes various forms of input content and enhances it through dif
 ## API Documentation
 
 ### POST /api/transform/expand-idea
+
 Transforms initial brainstorming into a structured article outline.
 
 Request Body:
+
 ```json
 {
-  "idea": "string",      // Initial brainstorming text
-  "targetLength": "short | medium | long",  // Optional, defaults to medium
-  "tone": "casual | professional"           // Optional, defaults to casual
+  "idea": "string", // Initial brainstorming text
+  "targetLength": "short | medium | long", // Optional, defaults to medium
+  "tone": "casual | professional" // Optional, defaults to casual
 }
 ```
 
 Response:
+
 ```json
 {
   "outline": {
     "title": "string",
     "mainThesis": "string",
     "keyPoints": ["string"],
-    "sections": [{
-      "heading": "string",
-      "points": ["string"]
-    }]
+    "sections": [
+      {
+        "heading": "string",
+        "points": ["string"]
+      }
+    ]
   },
   "metadata": {
     "suggestedTags": ["string"],
@@ -54,27 +61,32 @@ Response:
 ```
 
 ### POST /api/transform/generate-draft
+
 Creates a full article draft from a structured outline.
 
 Request Body:
+
 ```json
 {
   "outline": {
     "title": "string",
     "mainThesis": "string",
     "keyPoints": ["string"],
-    "sections": [{
-      "heading": "string",
-      "points": ["string"]
-    }]
+    "sections": [
+      {
+        "heading": "string",
+        "points": ["string"]
+      }
+    ]
   }
 }
 ```
 
 Response:
+
 ```json
 {
-  "content": "string",    // Markdown formatted article
+  "content": "string", // Markdown formatted article
   "metadata": {
     "wordCount": "number",
     "readingTime": "number",
@@ -84,45 +96,53 @@ Response:
 ```
 
 ### POST /api/transform/enhance
+
 Improves the quality and engagement of an existing draft.
 
 Request Body:
+
 ```json
 {
-  "content": "string",    // Markdown formatted article
-  "focusAreas": ["clarity", "engagement", "tone"] 
+  "content": "string", // Markdown formatted article
+  "focusAreas": ["clarity", "engagement", "tone"]
 }
 ```
 
 Response:
+
 ```json
 {
   "enhancedContent": "string",
-  "changes": [{
-    "type": "string",
-    "description": "string"
-  }]
+  "changes": [
+    {
+      "type": "string",
+      "description": "string"
+    }
+  ]
 }
 ```
 
 ### POST /api/transform/prepare-ghost
+
 Prepares content for publishing to Ghost, including metadata generation.
 
 Request Body:
+
 ```json
 {
-  "content": "string",    // Markdown formatted article
+  "content": "string" // Markdown formatted article
 }
 ```
 
 Response:
+
 ```json
 {
   "title": "string",
   "slug": "string",
   "metaDescription": "string",
   "tags": ["string"],
-  "content": "string",    // Ghost-formatted content
+  "content": "string", // Ghost-formatted content
   "excerpt": "string"
 }
 ```
@@ -142,6 +162,7 @@ All endpoints follow a consistent error response format:
 ```
 
 Common error codes:
+
 - `INVALID_INPUT`: Request body fails validation
 - `LLM_ERROR`: Error communicating with OpenAI
 - `PROCESSING_ERROR`: Error during content transformation
@@ -150,11 +171,13 @@ Common error codes:
 ## Development
 
 ### Testing
+
 Run tests with: `npm test`
 
 Test coverage report: `npm run test:coverage`
 
 ### Environment Variables
+
 ```
 PORT=3001
 DATABASE_URL=postgresql://user:password@localhost:5432/llm_pipeline
@@ -165,6 +188,7 @@ NODE_ENV=development
 ## Monitoring and Logging
 
 The service includes detailed logging of:
+
 - Processing duration for each transformation
 - LLM token usage
 - Error rates and types
@@ -175,6 +199,7 @@ Access logs are available at `/logs` in development mode.
 ## Architecture Notes
 
 Each endpoint is designed to function independently, following the single responsibility principle. This allows for:
+
 - Independent scaling of different transformation types
 - Isolated testing and monitoring
 - Flexible pipeline composition

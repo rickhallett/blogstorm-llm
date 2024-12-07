@@ -1,4 +1,4 @@
-import { jest } from '@jest/globals';
+import { jest } from "@jest/globals";
 
 // Configure longer timeout for integration tests
 jest.setTimeout(30000);
