@@ -2,42 +2,22 @@ import { describe, it, expect } from '@jest/globals';
 
 describe('Monitoring Requirements', () => {
   describe('Processing Metrics', () => {
-    it('should track transformation duration', () => {
-      throw new Error('Test not implemented');
-    });
-
-    it('should monitor token usage patterns', () => {
-      throw new Error('Test not implemented');
-    });
+    test.todo('should track transformation duration');
+    test.todo('should monitor token usage patterns');
   });
 
   describe('Error Tracking', () => {
-    it('should log error rates', () => {
-      throw new Error('Test not implemented');
-    });
-
-    it('should categorize error types', () => {
-      throw new Error('Test not implemented');
-    });
+    test.todo('should log error rates');
+    test.todo('should categorize error types');
   });
 
   describe('Usage Analytics', () => {
-    it('should analyze request patterns', () => {
-      throw new Error('Test not implemented');
-    });
-
-    it('should track endpoint utilization', () => {
-      throw new Error('Test not implemented');
-    });
+    test.todo('should analyze request patterns');
+    test.todo('should track endpoint utilization');
   });
 
   describe('Resource Monitoring', () => {
-    it('should monitor system resource usage', () => {
-      throw new Error('Test not implemented');
-    });
-
-    it('should track performance metrics', () => {
-      throw new Error('Test not implemented');
-    });
+    test.todo('should monitor system resource usage');
+    test.todo('should track performance metrics');
   });
 });
