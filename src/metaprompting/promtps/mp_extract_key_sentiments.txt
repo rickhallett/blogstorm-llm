@@ -1,0 +1,10 @@
+Purpose: Construct a list of key sentiments from the user prompt
+Instructions:
+    Extract the key sentiments from the user prompt.
+    Create a list of key sentiments.
+    Create a sentiment for each chat message
+    Summarize each key sentiment in a markdown table.
+    Count the number of messages for each sentiment.
+    Output a json object with each chat message and its sentiment.
+Sections: user-prompt
+Variables: user-prompt
